@@ -1,0 +1,29 @@
+    ========
+    Syntax:
+    ========
+       LibFile    := <LibObject, ...>
+       LibObject  := <[FormatsObj|SignalsObj|PatternObj|SymbolsObj|]>
+       FormatsObj := Formats(<subValidName>){<format_header>; <waveform_def; ...>}
+       SignalsObj := Signals(<subValidName>){<PinAssignment, ...>}
+       PatternObj := Pattern(<subValidName>){<Statement ...>}
+       SymbolsObj := Symbols(<subValidName>){<DefineStatement>;...}
+                
+       validName    := [_A-Zaz].*
+       subValidName :=  validName.validName
+       list(<item0>, <item1>, ...) := [<item0>, <item1>, ...]
+            
+       
+    SignalsObj:
+    ===========
+        pinType        := [dio]
+        PinAssignment  := validName=pinType(<var=val>, ...);
+        var            := <pin|map|format>
+
+    Example:
+        
+    Signals(mySigs){
+    PIN0  =  dio(pin=0,  map=x[0],   format=PIN0_FRMT );
+    PIN1  =  dio(pin=1,  map=x[1],   format=PIN2_FRMT );
+    PIN2  =  dio(pin=2,  map=y[0],   format=PIN1_FRMT );
+    CS_   =  dio(pin=5,  map=z[0],   format=PIN0_FRMT );
+    }
