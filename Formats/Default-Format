@@ -1,0 +1,22 @@
+Formats(DefaultFormats){
+
+      # CYCLE     0      1      2      3      4      5      6        7      8       9     10     11     12     13    14     15 
+  # FORMAT                                                          
+    cycle_sel = [zero , one  , ddta , idta , clk1 , clk2 , dclk ,   hiz  , low  , high , srbp , srbn , h1st , l1st , h4th , h24t ];
+    PIN0_FRMT = [oLLLL, oHHHH, oDDDD, oVVVV, oLHLH, oLLHH, oDDVV,   iZZZZ, iLLLL, iHHHH, iDDDD, iVVVV, iHZZZ, iLZZZ, iZZZH, iHHHH ];
+    PIN1_FRMT = [oLLLL, oHHHH, oDDDD, oVVVV, oLHLH, oLLHH, oDDVV,   iZZZZ, iLLLL, iHHHH, iDDDD, iVVVV, iHZZZ, iLZZZ, iZZZH, iZHZH ];
+    PIN2_FRMT = [oLLLL, oHHHH, oDDDD, oVVVV, oLHLH, oLLHH, oDDVV,   iZZZZ, iLLLL, iHHHH, iDDDD, iVVVV, iHZZZ, iLZZZ, iZZZH, iZHZH ];
+    PIN3_FRMT = [oLLLL, oHHHH, oDDDD, oVVVV, oLHLH, oLLHH, oDDVV,   iZZZZ, iLLLL, iHHHH, iDDDD, iVVVV, iHZZZ, iLZZZ, iZZZH, iZHZH ];
+    PIN4_FRMT = [oLLLL, oHHHH, oDDDD, oVVVV, oLHLH, oLLHH, oDDVV,   iZZZZ, iLLLL, iHHHH, iDDDD, iVVVV, iHZZZ, iLZZZ, iZZZH, iZHZH ];
+    PIN5_FRMT = [oLLLL, oHHHH, oDDDD, oVVVV, oLHLH, oLLHH, oDDVV,   iZZZZ, iLLLL, iHHHH, iDDDD, iVVVV, iHZZZ, iLZZZ, iZZZH, iZHZH ];
+    PIN6_FRMT = [oLLLL, oHHHH, oDDDD, oVVVV, oLHLH, oLLHH, oDDVV,   iZZZZ, iLLLL, iHHHH, iDDDD, iVVVV, iHZZZ, iLZZZ, iZZZH, iZHZH ];
+    PIN7_FRMT = [oLLLL, oHHHH, oDDDD, oVVVV, oLHLH, oLLHH, oDDVV,   iZZZZ, iLLLL, iHHHH, iDDDD, iVVVV, iHZZZ, iLZZZ, iZZZH, iZHZH ];
+    PIN8_FRMT = [oLLLL, oHHHH, oDDDD, oVVVV, oLHLH, oLLHH, oDDVV,   iZZZZ, iLLLL, iHHHH, iDDDD, iVVVV, iHZZZ, iLZZZ, iZZZH, iZHZH ];
+    PIN9_FRMT = [oLLLL, oHHHH, oDDDD, oVVVV, oLHLH, oLLHH, oDDVV,   iZZZZ, iLLLL, iHHHH, iDDDD, iVVVV, iHZZZ, iLZZZ, iZZZH, iZHZH ];
+   PIN10_FRMT = [oLLLL, oHHHH, oDDDD, oVVVV, oLHLH, oLLHH, oDDVV,   iZZZZ, iLLLL, iHHHH, iDDDD, iVVVV, iHZZZ, iLZZZ, iZZZH, iZHZH ];
+   PIN11_FRMT = [oLLLL, oHHHH, oDDDD, oVVVV, oLHLH, oLLHH, oDDVV,   iZZZZ, iLLLL, iHHHH, iDDDD, iVVVV, iHZZZ, iLZZZ, iZZZH, iZHZH ];
+   PIN12_FRMT = [oLLLL, oHHHH, oDDDD, oVVVV, oLHLH, oLLHH, oDDVV,   iZZZZ, iLLLL, iHHHH, iDDDD, iVVVV, iHZZZ, iLZZZ, iZZZH, iZHZH ];
+   PIN13_FRMT = [oLLLL, oHHHH, oDDDD, oVVVV, oLHLH, oLLHH, oDDVV,   iZZZZ, iLLLL, iHHHH, iDDDD, iVVVV, iHZZZ, iLZZZ, iZZZH, iZHZH ];
+   PIN14_FRMT = [oLLLL, oHHHH, oDDDD, oVVVV, oLHLH, oLLHH, oDDVV,   iZZZZ, iLLLL, iHHHH, iDDDD, iVVVV, iHZZZ, iLZZZ, iZZZH, iZHZH ];
+   PIN15_FRMT = [oLLLL, oHHHH, oDDDD, oVVVV, oLHLH, oLLHH, oDDVV,   iZZZZ, iLLLL, iHHHH, iDDDD, iVVVV, iHZZZ, iLZZZ, iZZZH, iZHZH ];
+}
