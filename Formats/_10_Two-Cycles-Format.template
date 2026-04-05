@@ -1,0 +1,10 @@
+---
+name: Two Cycles Format
+---
+Formats(exampleFormat){
+        # CYCLE        0       1  
+    # FORMAT                                                          
+      cycle_sel = [ led_on, led_off];  # Header
+      LED_FRMT  = [  oHHHH,  oLLLL ];  # All outputs format
+      BTN_FRMT  = [  iHHHH,  iLLLL ];  # All inputs format
+    }

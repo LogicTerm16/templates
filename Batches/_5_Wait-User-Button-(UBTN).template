@@ -1,0 +1,7 @@
+---
+name: Wait User Button (UBTN)
+---
+
+# This will bring a GUI window waiting for user to press UBTN to proceed
+hw.waitUSERBUTTON()
+

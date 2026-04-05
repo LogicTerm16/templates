@@ -1,0 +1,17 @@
+---
+name: Example with Full Documentation
+---
+# Instruction syntax:
+#  [lable:] <Cycle>, < ALU1 >, < ALU2 >, < X >, < Y >, < Z >, <iomask>, <log_cmd>, <do>, <branch>;
+Pattern (counter){
+# To be used with DefaultFormats and DefaultSignals
+    cycle=zero, r0=0,  x=r0;                 # Every instruction must start with "cycle=<> " and ends with ";" 
+    cycle=zero;                              # Every instruction takes 40ns (four ticks as defined on Format)
+    cycle=zero, r0=r0+10,  r1=r2+r15;        # No more than two ALU operations per instruction
+    cycle=zero, r0=0, x=r0, y=r1, z=r15;     # x, y and z output registers where each selects one of the GPRs
+    cycle=ddta,         repeat(10);          # One branch/repeat/call/service/for operation is allowed per instruction 
+    cycle=ddta,        x=r0, for (1000);     # Starts a loop for 1000 times
+    cycle=ddta,        x=r0, repeat(0xffff); # repeat 65535 times (40ns*65535=2.62ms)
+    cycle=ddta, r0+=1, x=r0, endfor;         # increment r0, and go back to for 
+    cycle=zero,        x=r0, service(pattern_stop(hw)); # Calling a service to end the pattern
+}

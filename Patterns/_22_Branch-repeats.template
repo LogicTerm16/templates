@@ -1,0 +1,18 @@
+---
+name: Branch: repeats
+---
+Pattern(repeatTest){
+    # to be used with GeneralFormats GeneralSignals
+    @auto cycle=zero, x=r0, y=r1, z=r2;
+    
+    cycle=zero, r1=0, r2=0xff;            
+    cycle=zero, r0=3, r2=0xaa;            
+
+    cycle=zero, r0+=1, r1+=2, for(10);      
+    cycle=one,  r0+=1, r1+=2, repeat (2);   
+    cycle=clk1, r0+=1, r1+=2, repeat (2);      
+    cycle=zero, r0+=1, r1+=2, repeat (r0);
+    cycle=clk2, r0+=1, r1+=2, repeat (4);
+    cycle=one,  r0+=1, r1+=2, endfor;
+   END: cycle=zero, service(pattern_stop(hw)); 
+}

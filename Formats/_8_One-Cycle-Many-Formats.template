@@ -1,0 +1,20 @@
+---
+name: One Cycle Many Formats
+---
+Formats(onecycmanyfrmt){
+        # CYCLE     0     
+  # FORMAT                                                  
+    cycle_sel  = [mix];
+    OUT_LOW    = [oLLLL]; # DIOs that uses this format are always driven Low
+    OUT_HIGH   = [oHHHH]; # DIOs that uses this format are always driven High
+    OUT_DATA   = [oDDDD]; # DIOs that uses this format are always driven similar to the state of the mapped bit in the DIO's Signal definition
+    OUT_INVD   = [oVVVV]; # DIOs that uses this format are always driven opposit to the state of the mapped bit in the DIO's Signal definition
+    OUT_KEEP   = [oKKKK]; # DIOs that uses this format are always Keeping the previous state
+    OUT_TOGGLE = [oTTTT]; # DIOs that uses this format are always Toggling the previous state
+    HIZ        = [oZZZZ]; # DIOs that uses this format are tri-stated
+    IN_LOW     = [iZLZZ]; # DIOs that uses this format read for Low at the second tick
+    IN_HIGH    = [iZHZZ]; # DIOs that uses this format read for High at the second tick
+    IN_DATA    = [iZDZZ]; # DIOs that uses this format read for Data (as mapped in the DIO's Signal definition) at the second tick
+    IN_INVD    = [iZVZZ]; # DIOs that uses this format read for inVert data (as mapped in the DIO's Signal definition) at the second tick
+    IN_MEM     = [iZMZZ]; # DIOs that uses this format read for IO change from last read at the second tick
+}

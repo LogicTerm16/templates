@@ -1,0 +1,8 @@
+---
+name: Read cycles
+---
+iZZHZ   # Input cycle where it reads the third tick for a High (1), read is failed if the DIO is low. 
+iLLLL   # Input cycle where it reads in all four ticks for a Low (0), read is failed if the DIO is high in any of ticks. 
+iDZZZ   # Input cycle where it reads the first tick for a Data (either 0 or 1 depending on what bit
+        #  is mapped in the DIO's Signal definition), read is failed if the DIO does not match D
+iZZZM   # Input cycle where it reads the fourth tick for a last state of the DIO, read is failed if the DIO is changed. 

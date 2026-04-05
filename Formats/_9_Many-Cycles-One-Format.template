@@ -1,0 +1,9 @@
+---
+name: Many Cycles One Format
+---
+Formats(manycyconefrmt){
+      # CYCLE     0      1      2      3      4      5      6        7      8       9     10     11     12     13    14     15 
+  # FORMAT                                                  
+   cycle_sel = [zero,   one,   ddta,  idta, clk1,  clk2,  dclk,    hiz,    low,  high,  srbp,  srbn,  h1st,   l1st,  h4th,  h24t ];
+   PIN0_FRMT = [oLLLL, oHHHH, oDDDD, oVVVV, oLHLH, oLLHH, oDDVV,  iZZZZ,  iLLLL, iHHHH, iDDDD, iVVVV, iHZZZ,  iLZZZ, iZZZH, iZHZH];
+}

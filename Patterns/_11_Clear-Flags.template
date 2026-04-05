@@ -1,0 +1,18 @@
+---
+name: Clear Flags
+---
+Pattern(myPat){                                        #             FCNTR
+                                                       #  T0   T1   [0] [1]  PF
+    cycle=idle, T0=10;                                 #  10    0    0   0   0
+    cycle=idle, T1=20;                                 #   9   20    0   0   0
+    cycle=idle, clr(T1);                               #   8    0    0   0   0 
+    cycle=idle, clr(T0);                               #   0    0    0   0   0 
+    cycle=low, iomask=0x3;                             #   0    0    1   1   1 
+    cycle=low, iomask=0x3;                             #   0    0    2   2   1  
+    cycle=low, iomask=0x3;                             #   0    0    3   3   1 
+    cycle=low, clr(FCNTR);                             #   0    0    0   0   1 
+    cycle=low, clr(PF);                                #   0    0    0   0   0
+    cycle=low, T0=9, iomask=0x1;                       #   9    0    1   0   1
+    cycle=low, T1=5, iomask=0x2;                       #   8    5    1   1   1
+    cycle=low;                                         #   7    4    1   1   1
+    cycle=low, clr(T0), clr(T1), clr(PF), clr(FCNTR);  #   0    0    0   0   0

@@ -1,0 +1,12 @@
+---
+name: Fail limit
+---
+Pattern(fail_limit_test){
+    cycle=low,  clr(FCNTR);     # Clear the fail counter  
+    cycle=low,  FLIMIT = 100;   # 24 - bit assignment 
+    READ_MORE:
+        cycle=low,  r0+=1, iomask =0xffff, log (FAIL);
+        cycle=low,  call (NFLE , READ_MORE );  # If fail counter < 100, go back to READ_MORE
+        cycle=low,  service(pattern_stop(hw)); 
+    }
+ 

@@ -1,0 +1,18 @@
+---
+name: Run/Stop/Reset a pattern
+---
+ # Run a pattern
+#hw.pat_run(<patternName>, <formatsName>, <signalsName> [, **params])
+
+# Run test pattern using DefaultFormats formats and GeneralSignals signals
+hw.pat_run("test", "DefaultFormats", "GeneralSignals")
+
+# Passing the parameter FREQ=1000  
+hw.pat_run("blink", "DefaultFormats", "GeneralSignals", FREQ=1000)
+
+# Stop a pattern
+hw.pat_stop()
+
+# Reset pattern generator
+hw.pat_reset()
+

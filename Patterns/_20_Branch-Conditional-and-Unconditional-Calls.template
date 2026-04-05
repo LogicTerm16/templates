@@ -1,0 +1,66 @@
+---
+name: Branch: Conditional and Unconditional Calls
+---
+Pattern(test_call2){
+           @auto cycle=ddta, x=r15, y=r0, z=r1;
+            
+            cycle=ddta, r0=0, r1=10, x=r0;
+            cycle=ddta, r0=1, r15=0;
+            cycle=ddta, r0=2, do=0xf, call(1, CALL_TRUE); # Always jump do=0xf, 
+            cycle=ddta, r0=3;
+            cycle=zero, r0=4, call(0, CALL_ERROR) ;  # Never jump
+
+            cycle=zero, r2=r1-10, r0=5; # Z1 FLAG is set
+            cycle=zero, r0=6, do=0xf, call(Z1, CALL_TRUE) ;
+
+            cycle=zero, r0=7, r2=r1+r0;
+            cycle=zero, r0=8, do=0xf, call(NZ1, CALL_TRUE) ;
+
+            cycle=zero, r0=9, iomask=0xffff; # Will not fail
+            cycle=zero, r0=10, do=0xf, call(NF, CALL_TRUE);
+
+            cycle=zero, r0=11;    
+            cycle=zero, r0=12, do=0xf, call(NPF, CALL_TRUE);
+
+            cycle=high, r0=13, iomask=0xffff; # Will fail
+            cycle=zero, r0=14;
+            cycle=zero, r0=15, do=0xf, call(F, CALL_TRUE);
+            
+            cycle=zero, r0=16;
+            cycle=zero, r0=17, do=0xf, call(PF, CALL_TRUE); # Already has a fail
+            
+            cycle=zero, r0=18;
+            cycle=ddta, FLIMIT=10;
+            cycle=zero, r0=19, do=0xf, call(NFLE, CALL_TRUE); # Already has a fail
+            
+            cycle=high, r0=20, iomask=0xffff, repeat(3); # Assuming FLIMIT_REG=10
+            cycle=zero, r0=21, do=0xf, call(FLE, CALL_TRUE);
+            cycle=ddta, T0=10; 
+            cycle=zero, r0=22, clr(T0);
+            cycle=zero, r0=23, do=0xf, call(NT0, CALL_TRUE); # Assuming T0=10
+            
+            cycle=zero, r0=24, repeat(8);
+            cycle=zero, r0=25, do=0xf, call(T0, CALL_TRUE); 
+            cycle=ddta, T1=84;
+            cycle=zero, r0=26;
+            cycle=zero, r0=27, clr(T1);
+            cycle=zero, r0=28, do=0xf, call(NT1, CALL_TRUE); # Assuming T1=20
+            
+            cycle=zero, r0=29, repeat(80);
+            cycle=zero, r0=30, do=0xf, call(T1, CALL_TRUE); 
+            
+            cycle=zero, r0=31;
+            cycle=zero, r0=32, do=0xf,call(NUF, CALL_TRUE); 
+            
+            cycle=zero, r0=33;
+            cycle=zero, r0=34, call(UF, CALL_ERROR); 
+        
+            cycle=ddta,do=5,   service(pattern_stop(hw)); 
+            
+CALL_TRUE:  cycle=ddta, r15=r15<<1;
+            cycle=ddta, r15=r15|1, return;
+
+CALL_ERROR: cycle=ddta, r0=0xffff, r15=0;
+            cycle=ddta, r0=0xffff, return;
+
+}

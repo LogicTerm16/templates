@@ -1,0 +1,10 @@
+---
+name: Register Assignments
+---
+Pattern(myPat){
+    cycle=idle, r1=0;                                 # r1=0x0000
+    cycle=idle, r1=0xffff, r2=0b0000_1111_0000_1111;  # r1=0xffff r2=0x0f0f
+    cycle=idle, r1=r2,     r2=r1;                     # r1=0x0f0f r2=0xffff (swap!)
+    cycle=idle, r1=100/2,  r2=((100+1)/2);            # r1=50     r2=50
+    cycle=idle, r1=-1,     r2=65536;                  # r1=0xffff r2=0
+    cycle=idle, r3=io;                                # r3 = the state of the DIOs 

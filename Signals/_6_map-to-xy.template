@@ -1,0 +1,13 @@
+---
+name: map to xy
+---
+Signals(Sigs8pins){
+    A1   = dio(pin=0,  map=x[0],   format=PIN0_FRMT );
+    B1   = dio(pin=1,  map=x[1],   format=PIN0_FRMT );
+    C1   = dio(pin=2,  map=y[2],   format=PIN0_FRMT );# Maps LT16 DIO[2] to to bit [2] of the pattern's output y
+    D1   = dio(pin=3,  map=y[3],   format=PIN0_FRMT );
+    E1   = dio(pin=4,  map=y[4],   format=PIN0_FRMT );
+    F1   = dio(pin=5,  map=y[5],   format=PIN0_FRMT );
+    G1   = dio(pin=6,  map=z[6],   format=PIN0_FRMT );
+    H1   = dio(pin=7,  map=z[7],   format=PIN0_FRMT );
+}

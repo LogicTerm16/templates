@@ -1,0 +1,17 @@
+---
+name: Branch: for loops
+---
+Pattern(nested_loops){
+    # to be used with GeneralFormats GeneralSignals
+    @auto cycle=zero, x=r0, y=r1, z=r2;
+    cycle=one, r0=1, r1=2;
+    cycle=zero, r2=3, r5=10;
+    cycle=one, r0=1, for(r5);
+        cycle=zero,     for(r0);
+            cycle=one, r0+=1, for(10);
+                cycle=zero, r1+=2, r2+=3, repeat(r5);
+            cycle=zero,  r5-=1, endfor;
+        cycle=one,   endfor;
+    cycle=one,  r5=10, endfor;
+    cycle=zero, x=r0, y=r0, z=r0, r0=0xdead, service(pattern_stop(hw)); 
+}

@@ -1,0 +1,21 @@
+---
+name: Services
+---
+Pattern(printThings){
+ # to be used with GeneralFormats GeneralSignals + fadyServices
+    @param Num=5;
+    @auto cycle=ddta, x=r0, y=r1;
+
+    cycle=zero, r0=0, r1=0, for(Num);
+    cycle=one,    service(echo(hw, "Hello World!"));  # Print Hello World <Num> times
+    cycle=clk1, endfor;
+    cycle=zero,  service(hw.setUSERLED(0xff, 0,   0  )); # Red
+    cycle=zero, repeat(0xffff);
+    cycle=zero,  service(hw.setUSERLED(0,   0xff, 0  )); # Green
+    cycle=zero, repeat(0xffff);
+    cycle=zero,  service(hw.setUSERLED(0,    0,  0xff)); # Blue
+    cycle=zero, repeat(0xffff);
+    cycle=ddta,  service(hw.printADC(hw)); 
+
+    cycle=zero, x=r0, y=r0, z=r0, r0=0xdead, service(pattern_stop(hw)); # 
+}

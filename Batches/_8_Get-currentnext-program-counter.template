@@ -1,0 +1,10 @@
+---
+name: Get current/next program counter
+---
+ # Get program counter
+currentPC, nextPC = hw.getPC()
+
+print("curPC=%i, nextPC=%i"%hw.getPC())
+###  Expected Output
+# curPC=6, nextPC=6
+  

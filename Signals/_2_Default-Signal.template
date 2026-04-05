@@ -1,0 +1,23 @@
+---
+name: Default Signal
+---
+Signals(DefaultSignals){
+   # To be used with GeneralFormats
+    A1   = dio(pin=0,  map=x[0],   format=PIN0_FRMT ); #  Maps LT16 DIO[0] to to bit [0] of the pattern's output x 
+    B1   = dio(pin=1,  map=x[1],   format=PIN1_FRMT ); # ..            [1]           [1]                         x
+    C1   = dio(pin=2,  map=x[2],   format=PIN2_FRMT ); # ..            [2]           [2]                         x
+    D1   = dio(pin=3,  map=x[3],   format=PIN3_FRMT ); # ..            [3]           [3]                         x
+    E1   = dio(pin=4,  map=x[4],   format=PIN4_FRMT ); # ..            [4]           [4]                         x
+    F1   = dio(pin=5,  map=x[5],   format=PIN5_FRMT ); # ..            [5]           [5]                         x
+    G1   = dio(pin=6,  map=x[6],   format=PIN6_FRMT ); # ..            [6]           [6]                         x
+    H1   = dio(pin=7,  map=x[7],   format=PIN7_FRMT ); # ..            [7]           [7]                         x
+    
+    A2   = dio(pin= 8,  map=x[8],  format=PIN8_FRMT ); #  Maps LT16 DIO[8] to to bit [8] of the pattern's output x
+    B2   = dio(pin= 9,  map=x[9],  format=PIN9_FRMT ); # ..            [9]           [9]                         x
+    C2   = dio(pin=10,  map=x[10], format=PIN10_FRMT );# ..            [10]          [10]                        x
+    D2   = dio(pin=11,  map=x[11], format=PIN11_FRMT );# ..            [11]          [11]                        x
+    E2   = dio(pin=12,  map=x[12], format=PIN12_FRMT );# ..            [12]          [12]                        x
+    F2   = dio(pin=13,  map=x[13], format=PIN13_FRMT );# ..            [13]          [13]                        x
+    G2   = dio(pin=14,  map=x[14], format=PIN14_FRMT );# ..            [14]          [14]                        x
+    H2   = dio(pin=15,  map=x[15], format=PIN15_FRMT );# ..            [15]          [15]                        x
+}

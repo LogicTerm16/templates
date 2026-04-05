@@ -1,0 +1,18 @@
+---
+name: for loop and repeat
+---
+Pattern(nested_loops){
+    # to be used with GeneralFormats GeneralSignals
+    @auto cycle=zero, x=r0, y=r1, z=r2;
+    cycle=one, r0=1, r1=2;                            # Initialize registers
+    cycle=zero, r2=3, r5=10;
+    cycle=one, r0=1, for(r5);                         # First Loop 10 times
+        cycle=zero,     for(r0);                      # Second Loop 1 time
+            cycle=one, r0+=1, for(10);                # Third Loop 10 times
+                cycle=zero, r1+=2, r2+=3, repeat(r5); # Repeat 10 times
+            cycle=zero,  r5-=1, endfor;               # End Third Loop 
+        cycle=one,   endfor;                          # End Second Loop 
+    cycle=one,  r5=10, endfor;                        # End First Loop 
+    cycle=zero, x=r0, y=r0, z=r0, r0=0xdead, service(pattern_stop(hw)); 
+}
+

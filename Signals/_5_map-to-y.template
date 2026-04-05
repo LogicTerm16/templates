@@ -1,0 +1,21 @@
+---
+name: map to y
+---
+Signals(OneFormat_Yonly){
+    DIO_0   = dio(pin=0,   map=y[ 0],   format=PIN0_FRMT );
+    DIO_1   = dio(pin=1,   map=y[ 1],   format=PIN0_FRMT );
+    DIO_2   = dio(pin=2,   map=y[ 2],   format=PIN0_FRMT );
+    DIO_3   = dio(pin=3,   map=y[ 3],   format=PIN0_FRMT );
+    DIO_4   = dio(pin=4,   map=y[ 4],   format=PIN0_FRMT );
+    DIO_5   = dio(pin=5,   map=y[ 5],   format=PIN0_FRMT );
+    DIO_6   = dio(pin=6,   map=y[ 6],   format=PIN0_FRMT );
+    DIO_7   = dio(pin=7,   map=y[ 7],   format=PIN0_FRMT );
+    DIO_8   = dio(pin= 8,  map=y[ 8],   format=PIN0_FRMT );
+    DIO_9   = dio(pin= 9,  map=y[ 9],   format=PIN0_FRMT );
+    DIO_10  = dio(pin=10,  map=y[10],   format=PIN0_FRMT );
+    DIO_11  = dio(pin=11,  map=y[11],   format=PIN0_FRMT );
+    DIO_12  = dio(pin=12,  map=y[12],   format=PIN0_FRMT );
+    DIO_13  = dio(pin=13,  map=y[13],   format=PIN0_FRMT );
+    DIO_14  = dio(pin=14,  map=y[14],   format=PIN0_FRMT );
+    DIO_15  = dio(pin=15,  map=y[15],   format=PIN0_FRMT );
+}

@@ -1,0 +1,9 @@
+---
+name: Example with Full Documentation
+---
+
+hw.print("We are going to drive one DIO high every 1 second") 
+for i in range(16):
+    hw.print("Set DIO[%i], clear all others"%i) 
+    hw.pat_run("setDIO", "DefaultFormats", "DefaultSignals", DIO=1<<i)
+    hw.sleep(1)

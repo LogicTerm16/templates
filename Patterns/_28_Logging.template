@@ -1,0 +1,29 @@
+---
+name: Logging
+---
+
+Pattern(log_test){
+    @auto cycle=zero, x=r0, y=r1, z=r2; 
+    # recommended with GeneralFormat GeneralSignals
+
+    cycle=zero, r0=0x0, service(hw.setGroupName("IOFAIL_Data"));    
+    cycle=zero, for(100);
+    cycle=zero, r0+=1, iomask=0xffff, log(FAIL), endfor;
+
+    # Log DIO Counters
+    cycle=zero, log(FCNTRL);   # Log DIO[0] to DIO[7] Fail counters
+    cycle=zero, log(FCNTRH);   # Log DIO[8] to DIO[15] Fail counters
+
+    # Log instruction info 
+    cycle=zero, r0=0xBEEF, r1=0xCAFE, log(INFO);
+    
+    cycle=zero, r0=0x0, service(hw.setGroupName("CHANGE_data"));
+    cycle=zero, for(100);
+    cycle=zero, r0+=1, iomask=0xffff, log(CHANGE), endfor;
+
+    cycle=zero, service(hw.setGroupName("MyAnalogStuff"));
+    cycle=zero, for(100);
+    cycle=zero, r0+=1, iomask=0xffff, log(ADC), endfor;
+    cycle=zero, x=r0, y=r0, z=r0, r0=0xdead, service(pattern_stop(hw));
+}
+

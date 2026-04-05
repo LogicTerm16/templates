@@ -1,0 +1,20 @@
+---
+name: Plotting ADC
+---
+Pattern(plotADC){
+    @param NUM_SAMPLES=1000;
+    cycle=zero, for (NUM_SAMPLES);
+    cycle=zero, log(ADC);
+    cycle=zero, repeat(100);
+    cycle=zero, endfor;
+
+    # Plotting all ['adc0', 'adc1', 'ppsmv','ppsmi', 'dac1mi']
+    cycle=zero, service(hw.plotall()); 
+
+    # Plotting some of the data ['adc0', 'adc1']
+    #cycle=zero, service(hw.plotall(['adc0', 'adc1']));
+
+    cycle=zero, x=r0, y=r0, z=r0, r0=0xdead, service(pattern_stop(hw));
+}
+
+

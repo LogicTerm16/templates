@@ -1,0 +1,21 @@
+---
+name: Identical mapping of all pins
+---
+Signals(OneSignal){
+    DIO_0   = dio(pin=0,   map=x[0],   format=PIN0_FRMT); # all pins mapped to bit [0] of the pattern's output x and
+    DIO_1   = dio(pin=1,   map=x[0],   format=PIN0_FRMT); # use PIN0_FRMT to format the signal
+    DIO_2   = dio(pin=2,   map=x[0],   format=PIN0_FRMT);
+    DIO_3   = dio(pin=3,   map=x[0],   format=PIN0_FRMT);
+    DIO_4   = dio(pin=4,   map=x[0],   format=PIN0_FRMT);
+    DIO_5   = dio(pin=5,   map=x[0],   format=PIN0_FRMT);
+    DIO_6   = dio(pin=6,   map=x[0],   format=PIN0_FRMT);
+    DIO_7   = dio(pin=7,   map=x[0],   format=PIN0_FRMT);
+    DIO_8   = dio(pin= 8,  map=x[0],   format=PIN0_FRMT);
+    DIO_9   = dio(pin= 9,  map=x[0],   format=PIN0_FRMT);
+    DIO_10  = dio(pin=10,  map=x[0],   format=PIN0_FRMT);
+    DIO_11  = dio(pin=11,  map=x[0],   format=PIN0_FRMT);
+    DIO_12  = dio(pin=12,  map=x[0],   format=PIN0_FRMT);
+    DIO_13  = dio(pin=13,  map=x[0],   format=PIN0_FRMT);
+    DIO_14  = dio(pin=14,  map=x[0],   format=PIN0_FRMT);
+    DIO_15  = dio(pin=15,  map=x[0],   format=PIN0_FRMT);
+}

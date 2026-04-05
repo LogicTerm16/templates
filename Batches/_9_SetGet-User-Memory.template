@@ -1,0 +1,19 @@
+---
+name: Set/Get User Memory
+---
+# 1024-Word User Memory. Each word is 16 bit. 
+# Memory is accessable from both services/batches and pattern generator
+hw.setUSERMEM(0, 0x0123)
+hw.setUSERMEM(1, 0x4567)
+hw.setUSERMEM(2, 0x89ab)
+hw.setUSERMEM(3, 0xcdef)
+
+for addr in range(4):
+    print("USERMEM[%i]=%.04x"%(addr,hw.getUSERMEM(addr)))
+
+###  Expected Output
+USERMEM[0]=0123
+USERMEM[1]=4567
+USERMEM[2]=89ab
+USERMEM[3]=cdef
+

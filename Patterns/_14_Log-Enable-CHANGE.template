@@ -1,0 +1,22 @@
+---
+name: Log Enable - CHANGE
+---
+Formats(myFrmt){
+      # CYCLE     0      1        2      3       4  
+  # FORMAT                       
+    cycle_sel = [zero , one  ,   hiz  , low  , high , chng ];
+    PIN0_FRMT = [oLLLL, oHHHH,   iZZZZ, iLLLL, iHHHH, iZMZZ];
+}
+Pattern(myPat){     
+             # Assuming that DIO[0] is tied to GND
+             # Assuming that DIO[1] is tied to VCC
+                                                   # FAIL[0] FAIL[1]
+    cycle=chng, r0=0,               log(CHANGE);  #   0     0    
+    cycle=chng, r0+=1, iomask=0b00, log(CHANGE);  #   0     0    
+    cycle=chng, r0+=1, iomask=0b01, log(CHANGE);  #   0     0    
+    cycle=chng, r0+=1, iomask=0b10, log(CHANGE);  #   0     1  <- A fail is logged
+    cycle=chng, r0+=1, iomask=0b11, log(CHANGE);  #   0     1  <- A fail is logged    
+    cycle=chng, r0+=1, iomask=0b00, log(CHANGE);  #   0     0    
+    cycle=chng, r0+=1, iomask=0b01, log(CHANGE);  #   1     0  <- A fail is logged    
+    cycle=chng, r0+=1, iomask=0b10, log(CHANGE);  #   0     0    
+    cycle=chng, r0+=1, iomask=0b11, log(CHANGE);  #   1     0  <- A fail is logged   

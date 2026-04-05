@@ -1,0 +1,9 @@
+---
+name: Minimal Format
+---
+Formats(miniFrmts){
+        # CYCLE     0     
+  # FORMAT                                                  
+    cycle_sel  = [ low ];
+    OUT_LOW    = [oLLLL]; 
+}

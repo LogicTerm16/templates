@@ -1,0 +1,16 @@
+---
+name: Log Enable - INFO
+---
+Pattern(myPat){     
+             # Assuming that DIO[0] is tied to GND
+             # Assuming that DIO[1] is tied to VCC
+                                                # FAIL[0] FAIL[1]
+    cycle=low,  r0=0,               log(INFO);  #   0     0    
+    cycle=low,  r0+=1, iomask=0b00, log(INFO);  #   0     0    
+    cycle=low,  r0+=1, iomask=0b01, log(INFO);  #   0     0    
+    cycle=low,  r0+=1, iomask=0b10, log(INFO);  #   0     1  <- A fail is logged
+    cycle=low,  r0+=1, iomask=0b11, log(INFO);  #   0     1  <- A fail is logged    
+    cycle=high, r0+=1, iomask=0b00, log(INFO);  #   0     0    
+    cycle=high, r0+=1, iomask=0b01, log(INFO);  #   1     0  <- A fail is logged    
+    cycle=high, r0+=1, iomask=0b10, log(INFO);  #   0     0    
+    cycle=high, r0+=1, iomask=0b11, log(INFO);  #   1     0  <- A fail is logged   

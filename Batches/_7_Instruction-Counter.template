@@ -1,0 +1,10 @@
+---
+name: Instruction Counter
+---
+ 
+# Get current instruction counter
+instCntr=hw.getInstrCounter()
+print("InstrCounter=%i"%instCntr)
+
+###  Expected Output
+InstrCounter=21361324511

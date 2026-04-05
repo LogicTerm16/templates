@@ -1,0 +1,9 @@
+---
+name: Branch: services
+---
+Pattern(service_call){
+    cycle=low, r1+=1, service( echo(hw, "Hello World") ); # Prints and CONTINUE
+    cycle=low, r0=0x1111;
+    cycle=low, r0=0x2222;
+    cycle=low, service(pattern_stop(hw));                 # STOP
+}

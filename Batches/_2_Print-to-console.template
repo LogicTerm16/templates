@@ -1,0 +1,12 @@
+---
+name: Print to console
+---
+ # Prints in blue
+hw.print("Hello World!")  # Prints to console 
+hw.print("I am %i years old", 10)
+
+
+###  Expected Output
+Hello World!
+I am %i years old 10
+  

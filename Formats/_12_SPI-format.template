@@ -1,0 +1,14 @@
+---
+name: SPI format
+---
+Formats(SPI_frmt){
+
+      # CYCLE     0      1      2      3      4     
+  # FORMAT                                                          
+    cycle_sel = [idle , start , clkh , clkl, rst];
+    CS_       = [oHHHH, oLLLL, oLLLL, oLLLL, oZZZZ];
+    SCLK      = [oLLLL, oLLLL, oHHHH, oLLLL, oZZZZ];
+    MOSI      = [oLLLL, oDDDD, oDDDD, oDDDD, oZZZZ];
+    MISO      = [iHHHH, iHHHH, iHHHH, iHHHH, iHHHH];
+    RST_N     = [oHHHH, oHHHH, oHHHH, oHHHH, oLLLL];
+}

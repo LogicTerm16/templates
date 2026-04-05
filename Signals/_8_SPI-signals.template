@@ -1,0 +1,12 @@
+---
+name: SPI signals
+---
+Signals(SPI_sigs){
+   # To be used with SPI_frmt
+    CS_    = dio(pin=0,  map=x[0],   format=CS_ ); 
+    SCLK   = dio(pin=1,  map=x[0],   format=SCLK );
+    MOSI   = dio(pin=2,  map=x[7],   format=MOSI );
+    MISO   = dio(pin=3,  map=x[0],   format=MISO );
+    RST_N  = dio(pin=4,  map=x[0],   format=RST_N );
+    CDONE  = dio(pin=5,  map=x[0],   format=MISO );
+}

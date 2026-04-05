@@ -1,0 +1,10 @@
+---
+name: Mini Format
+---
+Formats(FormatsMini){
+        # CYCLE     0    1      2       3       4     5       6   
+  # FORMAT                                                  
+    cycle_sel = [zero ,one   ,ddta   ,idta   ,l1st  ,h4th  ,h24t ];
+    PIN0_FRMT = [oLLLL, oHHHH, oDDDD ,oVVVV  ,iLZZZ ,iZZZH ,iZHZH ];
+   PIN15_FRMT = [oLLLL, oHHHH, oDDDD ,oVVVV  ,iLZZZ ,iZZZH ,iZHZH ];
+}

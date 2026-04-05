@@ -1,0 +1,39 @@
+---
+name: @param
+---
+Pattern(blinker){
+ # to be used with GeneralFormats GeneralSignals
+    @param BLINKS=10, DURATION=50; # 10 blinks 500ms each
+    @using PauseDefine;
+    @using GeneralDefines;
+    @auto cycle=ddta, x=r0; 
+    cycle=ddta, r0=0;
+    cycle=ddta,  for(BLINKS);
+        cycle=ddta,   for (DURATION);
+        cycle=ddta,   repeat(0xffff);
+        cycle=ddta,   repeat(0xffff);
+        cycle=ddta,   repeat(0xffff);
+        cycle=ddta,   repeat(0xd091);  
+        cycle=ddta,   endfor;          # total of 10ms*DURATION
+    cycle=ddta, r0^=0xffff,  endfor; # flip the data state 
+
+    cycle=ddta,        x=r0, service(pattern_stop(hw)); # Calling a service to end the pattern
+}
+
+# Compiler instructions are meant to improve pattern readability and parameterization.
+Pattern(param_test){
+    @param TIMES = 1, P1=1, P2=1, P3=1, P4=1;
+    @auto cycle=zero, x=r0, y=r1, z=r2, do=0xf;
+
+    cycle=zero, r0=0xba11, for(TIMES);
+        cycle=zero, repeat(P1);    
+        cycle=zero, repeat(P2);    
+        cycle=zero, repeat(P3);    
+        cycle=zero, repeat(P4);
+        cycle=zero, repeat(P1);    
+        cycle=zero, repeat(P2);    
+        cycle=zero, repeat(P3);    
+        cycle=zero, repeat(P4);        
+    cycle=zero, endfor;
+    cycle=zero,  service(pattern_stop(hw)); 
+}

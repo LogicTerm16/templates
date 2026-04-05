@@ -1,0 +1,54 @@
+---
+name: Example with Full Documentation
+---
+# ========
+#  Syntax:
+# ========
+#        LibFile    := <LibObject, ...>
+#        LibObject  := <[FormatsObj|SignalsObj|PatternObj|SymbolsObj|]>
+#        FormatsObj := Formats(<subValidName>){<format_header>; <waveform_def; ...>}
+#        
+#        validName    := [_A-Zaz].*
+#        subValidName :=  validName.validName
+#        list(<item0>, <item1>, ...) := [<item0>, <item1>, ...]
+#        
+# FormatsObj:
+# ===========
+#     format_header    := cycle_sel=list(<validName>);
+#     waveform_def     := validName=list(<cycle_format>, ... );
+#     cycle_format     := <dir><tick><tick><tick><tick>
+#     dir              := [io]  
+#     tick             := [LHDVKTMZ]
+#    
+# User can define upto 16 cycles 
+# User can define upto 16 formats
+# A DIO pin is configured to one format. Each instruction in a pattern will select a cycle.
+
+
+Formats(myFormat){
+      # CYCLE     0      1      2      3      4      5      6        7      8       9     10     11     12     13    14     15 
+  # FORMAT                                                          
+    cycle_sel = [zero , one  , ddta , idta , clk1 , clk2 , dclk ,   hiz  , low  , high , srbp , srbn , h1st , l1st , h4th , h24t  ];
+       FRMT0  = [oLLLL, oHHHH, oDDDD, oVVVV, oLHLH, oLLHH, oDDVV,   iZZZZ, iLLLL, iHHHH, iDDDD, iVVVV, iHZZZ, iLZZZ, iZZZH, iHHHH ];
+       FRMT1  = [oLLLL, oHHHH, oDDDD, oVVVV, oLHLH, oLLHH, oDDVV,   iZZZZ, iLLLL, iHHHH, iDDDD, iVVVV, iHZZZ, iLZZZ, iZZZH, iZHZH ];
+}
+
+#  OUTPUT CYCLES (oxxxx):
+#   L: Drive Low (0) 
+#   H: Drive High (1) 
+#   D: Drive Data from Pattern 
+#   V: Drive Inverted Data from Pattern 
+#   K: Keep Previous Data 
+#   T: Toggle Previous Data
+#   M: Not Used
+#   Z: Tri State (HiZ)
+
+#  INPUT CYCLES (ixxxx):
+#   L: Compare to Low (0) 
+#   H: Compare to High (1) 
+#   D: Compare to Data from Pattern 
+#   V: Compare to Inverted Data from Pattern 
+#   K: Not Used
+#   T: Not Used
+#   M: Memory read: Read comparator uses data state of last read.
+#   Z: Tri State (HiZ)

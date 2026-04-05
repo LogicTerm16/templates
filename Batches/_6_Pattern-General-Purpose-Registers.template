@@ -1,0 +1,14 @@
+---
+name: Pattern General Purpose Registers
+---
+ 
+# Get the value of any pattern General Purpose Registers
+r0=hw.getGPR(0)  
+print("r0=%.04x"%r0)
+
+# Print all General Purpose Registers
+hw.printGPRs()
+
+###  Expected Output
+r0=dead
+r0=dead r1=0000 r2=0000 r3=0000 r4=0000 r5=0000 r6=0000 r7=0000 r8=0000 r9=0000 r10=0000 r11=0000 r12=0000 r13=0000 r14=0000 r15=000

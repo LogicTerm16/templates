@@ -1,0 +1,11 @@
+---
+name: Example with Full Documentation
+---
+
+# defining a service for loading USERMEM with 1000 entry sinewave data
+def sineUserMem(hw):
+    from math import sin
+    for addr,val in enumerate([int((sin(i*2*3.14/1000)+1)*5000) for i in range(1000)]):
+        hw.setUSERMEM(addr, val)
+    #print(", ".join(["%i"%hw.getUSERMEM(i) for i in range(1000)]))
+    return hw.CONTINUE

@@ -1,0 +1,10 @@
+---
+name: Auto-assignment (@auto)
+---
+Pattern (auto_test){
+# To be used with DefaultFormats and DefaultSignals
+    @auto cycle=zero, x=r0, y=r1, z=r2;            # <-- x, y, and z assignments are applied to all following instructions
+    cycle=zero, r0=0xffff,  r1=0x1111;             # x=0xffff, y=0x1111, z=unknown
+    cycle=zero, r2=0x2222,  r3=0x3333;             # x=0xffff, y=0x1111, z=0x2222
+    cycle=zero, x=r0, service(pattern_stop(hw));   # Calling a service to end the pattern
+    }

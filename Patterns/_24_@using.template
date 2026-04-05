@@ -1,0 +1,14 @@
+---
+name: @using
+---
+Symbols(GeneralDefines){
+    NOP = "cycle=idta, x=r0, y=r1";
+    }
+
+    Pattern (counter){
+# To be used with DefaultFormats and DefaultSignals
+    @using  GeneralDefines;
+    NOP;
+    NOP;
+    NOP,        service(pattern_stop(hw)); # ends the pattern
+}

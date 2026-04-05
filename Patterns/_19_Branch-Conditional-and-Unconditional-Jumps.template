@@ -1,0 +1,33 @@
+---
+name: Branch: Conditional and Unconditional Jumps
+---
+Pattern(test_branch){
+    # to be used with GeneralFormats GeneralSignals
+    @auto cycle=ddta, x=r0, y=r0, z=r0;
+    LABEL_0 :   cycle=l1st, r0=0xf, jmp(0, FAIL_SUB);  # same as jmp(FAIL_SUB)
+                cycle=l1st, T0=10, clr(T0);
+    LABEL_1 :   cycle=l1st, r0=1,  jmp(1, LABEL_3);
+    LABEL_2 :   cycle=l1st, r0=2;   # Never gonna be reached!
+    LABEL_3 :   cycle=l1st, r0+=1, jmp(NT0, LABEL_3);
+    cycle=l1st, service(echo(hw,"Time is done!"));
+    LABEL_4 :  cycle=l1st,  r0=4, jmp(1,  LABEL_5);
+    LABEL_5 :  cycle=l1st,  r0=5, jmp(1,  LABEL_7);
+    LABEL_6 :  cycle=l1st,  r0=6, jmp(1,  LABEL_3);
+    LABEL_7 :  cycle=l1st,  r0=7, jmp(1,  LABEL_15);
+    LABEL_8 :  cycle=l1st,  r0=8, jmp(1,  LABEL_3);
+    LABEL_9 :  cycle=l1st,  r0=9, jmp(1,  LABEL_3);
+    LABEL_10 : cycle=l1st, r0=10, jmp(1,  LABEL_3);
+    LABEL_11 : cycle=l1st, r0=11, jmp(1,  LABEL_3);
+    LABEL_12 : cycle=l1st, r0=12, jmp(1,  LABEL_3);
+    LABEL_13 : cycle=l1st, r0=13, jmp(1,  LABEL_3);
+    LABEL_14 : cycle=l1st, r0=14, jmp(1,  LABEL_3);
+    LABEL_15 : cycle=l1st, r0=15, jmp(1,  HAHA);
+
+    PASS: cycle=l1st, r0=0xFFFF;
+          cycle=l1st, jmp(LABEL_4);
+    FAIL_SUB: cycle=l1st, r0=0xDEAD;
+
+    HAHA:  cycle=l1st, service(echo(hw,"Here"));
+
+    cycle=zero, service(pattern_stop(hw));
+}

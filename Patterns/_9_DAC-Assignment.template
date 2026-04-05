@@ -1,0 +1,14 @@
+---
+name: DAC Assignment
+---
+Pattern(myPat){
+    cycle=idle, r0=0,    r1=1000; 
+    cycle=idle, r2=5000, r3=10_000;
+    cycle=idle, dac0=r0;              # DAC0= 0.000V, DAC1=OLD_VAL
+    cycle=idle, dac0=r1;              # DAC0= 1.000V, DAC1=OLD_VAL
+    cycle=idle, dac0=r2;              # DAC0= 5.000V, DAC1=OLD_VAL
+    cycle=idle, dac0=r3;              # DAC0=10.000V, DAC1=OLD_VAL
+    cycle=idle, dac1=r0;              # DAC0=10.000V, DAC1= 0.000V  
+    cycle=idle, dac1=r1;              # DAC0=10.000V, DAC1= 1.000V
+    cycle=idle, dac1=r2;              # DAC0=10.000V, DAC1= 5.000V 
+    cycle=idle, dac0=r0, dac1=r0;     # DAC0= 0.000V, DAC1= 0.000V

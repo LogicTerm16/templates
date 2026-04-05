@@ -1,0 +1,9 @@
+---
+name: Auxiliary Register Assignment
+---
+Pattern(myPat){
+    cycle=idle, SEED=0x8765_4321;       # 32-bit assignment
+    cycle=idle, FLIMIT=10;              # 24-bit assignment
+    cycle=idle, T0=0xffffff;            # 24-bit assignment
+    cycle=idle, T1=0xffffff-10;         # 24-bit assignment
+    

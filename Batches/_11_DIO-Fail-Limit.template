@@ -1,0 +1,17 @@
+---
+name: DIO Fail Limit
+---
+# 24-bit fail limit register to allocate maximum number of 
+# fail packets per DIO
+# FLMIT=0    --> No limit
+# FLMIT=100  --> 100 is the maximum number of fails for any DIO
+flmt=hw.getFLIMIT()
+print("Fail limit=", flmt)
+
+hw.setFLIMIT(100)
+flmt=hw.getFLIMIT()
+print("Fail limit=", flmt)
+
+###  Expected Output
+Fail limit= 0
+Fail limit= 100

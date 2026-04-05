@@ -1,0 +1,41 @@
+---
+name: Hello World Full Example - Pattern
+---
+# Define Formats
+Formats(helloWorldFormats){
+      # CYCLE     0      1    
+  # FORMAT                  
+   cycle_sel = [zero,   ddta];
+   MYFRMT    = [oLLLL, oDDDD];
+}
+
+#Define Signals
+Signals(HelloWorldSignals){
+    LED0    = dio(pin=0,   map=x[ 0],   format=MYFRMT );
+    LED1    = dio(pin=1,   map=x[ 1],   format=MYFRMT );
+    LED2    = dio(pin=2,   map=x[ 2],   format=MYFRMT );
+    LED3    = dio(pin=3,   map=x[ 3],   format=MYFRMT );
+    LED4    = dio(pin=4,   map=x[ 4],   format=MYFRMT );
+    LED5    = dio(pin=5,   map=x[ 5],   format=MYFRMT );
+    LED6    = dio(pin=6,   map=x[ 6],   format=MYFRMT );
+    LED7    = dio(pin=7,   map=x[ 7],   format=MYFRMT );
+    LED8    = dio(pin=8,   map=x[ 8],   format=MYFRMT );
+    LED9    = dio(pin=9,   map=x[ 9],   format=MYFRMT );
+    LED10   = dio(pin=10,  map=x[10],   format=MYFRMT );
+    LED11   = dio(pin=11,  map=x[11],   format=MYFRMT );
+    LED12   = dio(pin=12,  map=x[12],   format=MYFRMT );
+    LED13   = dio(pin=13,  map=x[13],   format=MYFRMT );
+    LED14   = dio(pin=14,  map=x[14],   format=MYFRMT );
+    LED15   = dio(pin=15,  map=x[15],   format=MYFRMT );
+}
+
+#Define Pattern
+Pattern(helloWorldPattern){
+    cycle=zero, r0=0, x=r0;                       # Initialize r0 to zero
+KEEP_RUNNING:
+    cycle=ddta, for(0xffff);                      # Start an infinite loop
+        cycle=ddta,   r0+=1;                      # Increment r0    
+    cycle=ddta, endfor;                          # End infinite loop
+    cycle=ddta, jmp(NUF, KEEP_RUNNING);
+    cycle=zero, service(hw.pat_stop()); # Calling a service to end the pattern
+    }

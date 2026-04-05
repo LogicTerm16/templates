@@ -1,0 +1,7 @@
+---
+name: Plot data
+---
+# Plot function takes data in form of [header, record0, record1, record2, ...]
+
+data=[["X", "X^2", "X^3"], [0,0,0], [1, 1, 1],  [2, 4, 8],  [3, 9, 27],  [4, 16, 64]]
+hw.plot(data,  title="X vs X^2 and X^3", win=1, ylabel1="Voltage (mV)")

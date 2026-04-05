@@ -1,0 +1,13 @@
+---
+name: Read User Button (UBTN)
+---
+ # Get the status of user button 
+ubtn = hw.getUSERBUTTON() # Returns the state of UBTN in the last 32ms
+                          #  where each bit reperesents a 1ms.
+
+print("UBTN=%.08x"%ubtn)
+###  Expected Output
+UBTN=00000000                 # UBTN is not pressed (for the last 32ms)
+UBTN=ffffffff                 # UBTN is pressed (for the last 32ms)
+UBTN=ffffff00                 # UBTN was released 8ms ago 
+  

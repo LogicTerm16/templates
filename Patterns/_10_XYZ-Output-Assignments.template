@@ -1,0 +1,12 @@
+---
+name: X/Y/Z Output Assignments
+---
+Pattern(myPat){
+                                      #    X      Y      Z
+    cycle=idle, r0=0x0000, r1=0x1111; # 0x0000 0x0000 0x0000
+    cycle=idle, r2=0x2222, r3=0x3333; # 0x0000 0x0000 0x0000
+    cycle=idle, x=r0, y=r1, z=r2;     # 0x0000 0x1111 0x2222
+    cycle=idle;                       # 0x0000 0x0000 0x0000
+    cycle=idle, x=r1, y=r1, z=r1;     # 0x1111 0x1111 0x1111
+    cycle=idle, x=r2, y=r2;           # 0x2222 0x2222 0x0000
+    cycle=idle, x=r3, r3=0xffff;      # 0xffff 0x0000 0x0000

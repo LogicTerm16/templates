@@ -1,0 +1,36 @@
+---
+name: Database
+---
+print("Database name:", hw.getDbName())
+
+max_x=hw.runQuery("select max(X)  from IOFails")[0][0]    
+alldata=hw.runQuery("select X,Y, Z from IOFails")
+print(alldata)
+
+
+# Print Database Tables
+hw.PrintDB()
+
+hw.setGroupName("MyTrendline")
+# Run a Query
+
+
+###  Expected Output
+Database name: :memory:
+[]
+TABLE[Records] (count=11):
+  ---------------------
+      id    |   Type   
+  ---------------------
+      1      |   Groups  
+      2      |   Groups  
+      3      |  IOChange 
+      4      | IOCounters
+      5      | IOCounters
+      6      | IOCounters
+      7      | IOCounters
+      8      | IOCounters
+      9      | IOCounters
+      10     | IOCounters
+      11     | IOCounters
+

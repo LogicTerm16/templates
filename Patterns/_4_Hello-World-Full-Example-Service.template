@@ -1,0 +1,23 @@
+---
+name: Hello World Full Example - Service
+---
+
+Pattern(helloWorldPattern2){
+ # to be used with helloWorldFormats HelloWorldSignals helloWorldServices
+    @param Num=5;
+    @auto cycle=zero;
+
+    cycle=zero, for(Num);
+    cycle=zero,    service(echo(hw, "Hello World!"));  # Print Hello World <Num> times
+    cycle=zero, endfor;
+    cycle=zero,  service(hw.setUSERLED(0xff, 0,   0  )); # Red
+    cycle=zero, repeat(0xffff);
+    cycle=zero,  service(hw.setUSERLED(0,   0xff, 0  )); # Green
+    cycle=zero, repeat(0xffff);
+    cycle=zero,  service(hw.setUSERLED(0,    0,  0xff)); # Blue
+    cycle=zero, repeat(0xffff);
+
+    cycle=zero,  service(hw.printADC()); # Print ADC value
+
+    cycle=zero,  service(hw.pat_stop()); # 
+}

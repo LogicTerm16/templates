@@ -1,0 +1,31 @@
+---
+name: Drive-Only Pin Assignment
+---
+# Connect DIO[3:0] to DO[3:0]
+Formats(do_frmt){
+  # FORMAT                                                          
+    cycle_sel = [ low  ];
+    PIN0_FRMT = [ iZZLZ ];
+}
+
+Pattern(test_do){
+                                               #       (last)        (first)
+    cycle=low, r0=0;                           # Tick:    3     2   1    0 
+    cycle=low, iomask=0xf, log(FAIL), r0+=1, do=1;  # do=xxxx xxxx xxxx 0000
+    cycle=low, iomask=0xf, log(FAIL), r0+=1, do=2;
+    cycle=low, iomask=0xf, log(FAIL), r0+=1, do=3;
+    cycle=low, iomask=0xf, log(FAIL), r0+=1;
+    cycle=low, iomask=0xf, log(FAIL), r0+=1, do=4;
+    cycle=low, iomask=0xf, log(FAIL), r0+=1, do=5;
+    cycle=low, iomask=0xf, log(FAIL), r0+=1, do=6;
+    cycle=low, iomask=0xf, log(FAIL), r0+=1, do=7;
+    cycle=low, iomask=0xf, log(FAIL), r0+=1, do=8;
+    cycle=low, iomask=0xf, log(FAIL), r0+=1, do=9;
+    cycle=low, iomask=0xf, log(FAIL), r0+=1, do=10;
+    cycle=low, iomask=0xf, log(FAIL), r0+=1, do=11;
+    cycle=low, iomask=0xf, log(FAIL), r0+=1, do=12;
+    cycle=low, iomask=0xf, log(FAIL), r0+=1, do=13;
+    cycle=low, iomask=0xf, log(FAIL), r0+=1, do=14;
+    cycle=low, iomask=0xf, log(FAIL), r0+=1, do=15;
+    cycle=low, service(pattern_stop(hw));
+}

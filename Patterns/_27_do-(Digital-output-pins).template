@@ -1,0 +1,14 @@
+---
+name: do (Digital output pins)
+---
+Pattern(do_test){
+    # to be used with GeneralFormats GeneralSignals   
+    cycle=zero, do=0;   # DO = 0000
+    cycle=zero, do=1;   # DO = 0001
+    cycle=zero, do=2;   # DO = 0010
+    cycle=zero, do=4;   # DO = 0100
+    cycle=zero, do=8;   # DO = 1000
+    cycle=zero, do=15;  # DO = 1111
+    cycle=zero;         # DO = 0000 (Default when no assignment)
+    cycle=zero, x=r0, y=r0, z=r0, r0=0xdead, service(pattern_stop(hw)); 
+}

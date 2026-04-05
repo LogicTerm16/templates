@@ -1,0 +1,14 @@
+---
+name: Memory Access
+---
+Pattern(myPat){
+    cycle=idle, r0=0, r1=10; 
+    cycle=idle, r2=5, r3=2;      # r0=0, r1=10, r2=5, r3=2
+                                 #MEM: 0:xxxx  1:xxxx  2:xxxx  3:xxxx
+
+    cycle=idle, mem[2]=r1;      # Writes 10 to memory location 2
+    cycle=idle, mem[r0]=r2;     # Writes 5 to memory location 0
+    cycle=idle, r0=mem[r3];     # Reads memory location 2 into r0
+    cycle=idle, r1=mem[0];      # Reads memory location 0 into r1
+                                # r0=10, r1=5, r2=5, r3=2
+                                #MEM: 0:5  1:xxxx  2:10  3:xxxx   

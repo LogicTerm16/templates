@@ -1,0 +1,17 @@
+---
+name: ADC0 and ADC1
+---
+# Reading ADC0
+# ADC0 is a fully differntial Input with +/-10V 
+val=hw.getADC0()
+print("ADC0=%.03fV"%val)
+
+# Reading ADC1
+# ADC1 is a fully differntial Input with +/-10V 
+val=hw.getADC1()
+print("ADC1=%.03fV"%val)
+
+
+###  Expected Output
+ADC0=-3.590V
+ADC1=-3.825V

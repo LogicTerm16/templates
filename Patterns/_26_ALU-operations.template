@@ -1,0 +1,30 @@
+---
+name: ALU operations
+---
+Pattern(test_alu){
+    # to be used with GeneralFormats GeneralSignals
+    @auto cycle=zero, x=r0, y=r1, z=r2;   #  Z  Y  X
+    cycle=zero, r0=1, r1=7, z=r1;         # (7, 7, 1)
+    cycle=zero, r2=3, r4=1;               # (3, 7, 1)
+    # r0=1, r1=7, r2=3, r4=1
+    cycle=zero, r0=r1+r2;                 # (3, 7, 10)
+    cycle=zero, r0=r1-r2;                 # (3, 7, 4)
+    cycle=zero, r0=r1*r2;                 # (3, 7, 21)
+    cycle=zero, r0=r1**r2;                # (3, 7, 0)
+    cycle=zero, r0=r1|r2;                 # (3, 7, 7)
+    cycle=zero, r0=r1&r2;                 # (3, 7, 3)
+    cycle=zero, r0=r1^r2;                 # (3, 7, 4)
+    cycle=zero, r0=r1>r2;                 # (3, 7, 0xffff)
+    cycle=zero, r0=r1<r2;                 # (3, 7, 0)
+    cycle=zero, r0=r1<<< r2;              # (3, 7, 0x38)
+    cycle=zero, r0=r1>>> r2;              # (3, 7, 0xe000)
+    cycle=zero, r0=1;                     # (3, 7, 1)
+    cycle=zero, mem[r0]=r1;               # (3, 7, 1) 
+    cycle=zero, r0=mem[r4];               # (3, 7, 7)
+    cycle=zero, r0=r1+2;                  # (3, 7, 9)
+    cycle=zero, r0=r1-2;                  # (3, 7, 5)
+    cycle=zero, r0=r1*2;                  # (3, 7, 14)
+    cycle=zero, r0=rand(r1);              # (3, 7, 0)
+    cycle=zero, r0=mem[1];                # (3, 7, 7)
+    cycle=zero, x=r0, y=r0, z=r0, r0=0xdead, service(pattern_stop(hw)); 
+}

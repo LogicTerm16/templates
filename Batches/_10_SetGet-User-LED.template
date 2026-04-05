@@ -1,0 +1,23 @@
+---
+name: Set/Get User LED
+---
+# setUSERLED<red, green, blue> function is used to control the RGB User LED. 
+print("Blinking Red")
+for i in range(6):
+    hw.setUSERLED((256-(i&1))&0xff,0,0)
+    hw.sleep(0.1)
+
+print("Blinking Green")
+for i in range(6):
+    hw.setUSERLED(0,(256-(i&1))&0xff,0)
+    hw.sleep(0.1)
+
+print("Blinking Blue")
+for i in range(6):
+    hw.setUSERLED(0,0,(256-(i&1))&0xff)
+    hw.sleep(0.1)
+
+    
+r,g,b = hw.getUSERLED()
+print("Red=%.01f%%, Green=%.01f%%, Blue=%.01f%%"%(r*100/255, g*100/255, b*100/255)) 
+

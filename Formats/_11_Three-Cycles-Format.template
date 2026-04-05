@@ -1,0 +1,11 @@
+---
+name: Three Cycles Format
+---
+
+Formats(exampleFormat2){
+    cycle_sel = [low,    data, inv  ];
+    READ_FRMT  = [iZZLZ, iZZZD, iZZZV]; # Inputs. Z is tri-state. 
+                                        # D and V rely on the pin selected data. 
+    WRITE_FRMT = [oLLLL, oDDDD, oVVVV]; # Ouputs. if data is 0, D is 0 & V is 1.
+                                        # if data is 1, D is 1 & V is 0.
+    }

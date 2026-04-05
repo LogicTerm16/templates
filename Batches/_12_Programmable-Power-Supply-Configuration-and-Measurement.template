@@ -1,0 +1,40 @@
+---
+name: Programmable Power Supply Configuration and Measurement
+---
+ # Configure/Get/Set PPS 
+#hw.configPPS(<opmode>,  <cur_range>, <volt_range>)
+hw.configPPS(opmode="FVMI",       # Operation Mode: 
+                                  #            "FVMI": Force Voltage Measure Current  
+                                  #            "FVMV": Force Voltage Measure Voltage  
+             cur_range="2.5mA",   # Current Range: "5uA"    : +/-5uA
+                                  #                "25uA"   : +/-25uA
+                                  #                "250uA"  : +/-250uA
+                                  #                "2.5mA"  : +/-2.5mA
+                                  #                "25mA"   : +/-25mA
+                                  #                "250mA"  : +/-250mA **
+                                  #                "500mA"  : +/-500mA **
+             volt_range="BIP_6V") # Voltage Range: 
+                                  #             "BIP_6V":   -6V to 6V
+                                  #             "UNI_P10V":  0 to 10V
+                                  #             "UNI_N10V":  0 to -10V
+
+hw.configPPS("FVMV", "25mA", "UNI_P10V") 
+
+# PPS Set Voltage to 2.5V
+hw.setPPSV(2.5)
+
+# Measure Voltage
+meas, unit = hw.getPPS()
+print("PPS_M%s=%.3f "%(unit, meas))
+
+hw.configPPS("FVMI", "25mA", "UNI_P10V") 
+hw.setPPSV(2.5)
+
+# Measure Current
+meas, unit = hw.getPPS()
+print("PPS_M%s=%.3f "%(unit, meas))
+
+###  Expected Output
+#PPS_MV=2.498 
+#PPS_MI=-0.009 
+
