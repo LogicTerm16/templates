@@ -1,6 +1,3 @@
----
-name: Default Signal
----
 Signals(DefaultSignals){
    # To be used with GeneralFormats
     A1   = dio(pin=0,  map=x[0],   format=PIN0_FRMT ); #  Maps LT16 DIO[0] to to bit [0] of the pattern's output x 

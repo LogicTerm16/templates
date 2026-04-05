@@ -1,7 +1,3 @@
----
-name: Pattern General Purpose Registers
----
- 
 # Get the value of any pattern General Purpose Registers
 r0=hw.getGPR(0)  
 print("r0=%.04x"%r0)

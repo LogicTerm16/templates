@@ -1,6 +1,3 @@
----
-name: DIO Fail Limit
----
 # 24-bit fail limit register to allocate maximum number of 
 # fail packets per DIO
 # FLMIT=0    --> No limit

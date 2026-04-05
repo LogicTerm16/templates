@@ -1,6 +1,3 @@
----
-name: Calling Subroutines
----
 Pattern(test_call2){
            @auto cycle=ddta, x=r15, y=r0, z=r1;
             

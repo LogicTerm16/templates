@@ -1,6 +1,3 @@
----
-name: @param
----
 Pattern(blinker){
  # to be used with GeneralFormats GeneralSignals
     @param BLINKS=10, DURATION=50; # 10 blinks 500ms each

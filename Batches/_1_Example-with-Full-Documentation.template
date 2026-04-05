@@ -1,7 +1,3 @@
----
-name: Example with Full Documentation
----
-
 hw.print("We are going to drive one DIO high every 1 second") 
 for i in range(16):
     hw.print("Set DIO[%i], clear all others"%i) 

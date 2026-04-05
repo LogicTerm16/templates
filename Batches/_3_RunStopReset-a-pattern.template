@@ -1,6 +1,3 @@
----
-name: Run/Stop/Reset a pattern
----
  # Run a pattern
 #hw.pat_run(<patternName>, <formatsName>, <signalsName> [, **params])
 
@@ -15,4 +12,3 @@ hw.pat_stop()
 
 # Reset pattern generator
 hw.pat_reset()
-

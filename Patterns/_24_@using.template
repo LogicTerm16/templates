@@ -1,6 +1,3 @@
----
-name: @using
----
 Symbols(GeneralDefines){
     NOP = "cycle=idta, x=r0, y=r1";
     }

@@ -1,6 +1,3 @@
----
-name: Drive-Only Pin Assignment
----
 # Connect DIO[3:0] to DO[3:0]
 Formats(do_frmt){
   # FORMAT                                                          

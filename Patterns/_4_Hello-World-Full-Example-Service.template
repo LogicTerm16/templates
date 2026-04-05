@@ -1,7 +1,3 @@
----
-name: Hello World Full Example - Service
----
-
 Pattern(helloWorldPattern2){
  # to be used with helloWorldFormats HelloWorldSignals helloWorldServices
     @param Num=5;

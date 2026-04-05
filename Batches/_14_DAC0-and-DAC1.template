@@ -1,6 +1,3 @@
----
-name: DAC0 and DAC1
----
 # Set DAC0 to 1.25V
 hw.setDAC0(1.25) # 0-10V
 
@@ -9,4 +6,3 @@ hw.setDAC0(5)
 
 print("Setting DAC1 to 10V")
 hw.setDAC1(10)
-

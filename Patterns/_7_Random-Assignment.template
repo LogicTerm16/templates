@@ -1,8 +1,4 @@
----
-name: Random Assignment
----
 Pattern(myPat){
     cycle=idle, SEED=0x8765_4321;      
     cycle=idle, r0=0, r1=1;
     cycle=idle, r0=rand(r0), r1=rand(r1);  #Linear-feedback shift register
-      

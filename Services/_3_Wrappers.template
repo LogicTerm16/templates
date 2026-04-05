@@ -1,6 +1,3 @@
----
-name: Wrappers
----
 hw.pat_run':          
 hw.pat_reset':        
 hw.pat_stop':                 
@@ -35,5 +32,4 @@ hw.configPPS':
 hw.setGroupName':     
 hw.sleep':            
 hw.plot':             
-hw.plotall':          
-
+hw.plotall':

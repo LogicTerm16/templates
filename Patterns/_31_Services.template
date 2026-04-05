@@ -1,6 +1,3 @@
----
-name: Services
----
 Pattern(printThings){
  # to be used with GeneralFormats GeneralSignals + fadyServices
     @param Num=5;

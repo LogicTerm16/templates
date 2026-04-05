@@ -1,6 +1,3 @@
----
-name: Branch: for loops
----
 Pattern(nested_loops){
     # to be used with GeneralFormats GeneralSignals
     @auto cycle=zero, x=r0, y=r1, z=r2;

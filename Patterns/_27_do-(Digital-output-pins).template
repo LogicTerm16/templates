@@ -1,6 +1,3 @@
----
-name: do (Digital output pins)
----
 Pattern(do_test){
     # to be used with GeneralFormats GeneralSignals   
     cycle=zero, do=0;   # DO = 0000

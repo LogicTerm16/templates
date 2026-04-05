@@ -1,6 +1,3 @@
----
-name: for loop and repeat
----
 Pattern(nested_loops){
     # to be used with GeneralFormats GeneralSignals
     @auto cycle=zero, x=r0, y=r1, z=r2;
@@ -15,4 +12,3 @@ Pattern(nested_loops){
     cycle=one,  r5=10, endfor;                        # End First Loop 
     cycle=zero, x=r0, y=r0, z=r0, r0=0xdead, service(pattern_stop(hw)); 
 }
-

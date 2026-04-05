@@ -1,6 +1,3 @@
----
-name: Database
----
 print("Database name:", hw.getDbName())
 
 max_x=hw.runQuery("select max(X)  from IOFails")[0][0]    
@@ -33,4 +30,3 @@ TABLE[Records] (count=11):
       9      | IOCounters
       10     | IOCounters
       11     | IOCounters
-

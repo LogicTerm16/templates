@@ -1,10 +1,6 @@
----
-name: Database access
----
 Pattern(onFileDB){
     # Create a database on file
     # createDB(self, DBASENAME=':memory:', force_new=1)
     cycle=zero, service(createdb(hw, "lt16_data.sqlite", 1))
     cycle=zero, x=r0, y=r0, z=r0, r0=0xdead, service(pattern_stop(hw));
 }
-

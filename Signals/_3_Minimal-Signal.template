@@ -1,6 +1,3 @@
----
-name: Minimal Signal
----
 Signals(miniSigs){
     DIO_0   = dio(pin=0,   map=0,   format=OUT_LOW );
 }

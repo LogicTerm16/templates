@@ -1,6 +1,3 @@
----
-name: Example with Full Documentation
----
 # Instruction syntax:
 #  [lable:] <Cycle>, < ALU1 >, < ALU2 >, < X >, < Y >, < Z >, <iomask>, <log_cmd>, <do>, <branch>;
 Pattern (counter){

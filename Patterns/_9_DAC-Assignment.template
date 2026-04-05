@@ -1,6 +1,3 @@
----
-name: DAC Assignment
----
 Pattern(myPat){
     cycle=idle, r0=0,    r1=1000; 
     cycle=idle, r2=5000, r3=10_000;

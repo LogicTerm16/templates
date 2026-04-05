@@ -1,7 +1,3 @@
----
-name: Three Cycles Format
----
-
 Formats(exampleFormat2){
     cycle_sel = [low,    data, inv  ];
     READ_FRMT  = [iZZLZ, iZZZD, iZZZV]; # Inputs. Z is tri-state. 

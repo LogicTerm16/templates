@@ -1,6 +1,3 @@
----
-name: Log Enable - FAIL
----
 Formats(myFrmt){
       # CYCLE     0      1        2      3       4  
   # FORMAT                       
@@ -19,4 +16,4 @@ Pattern(myPat){
     cycle=high, r0+=1, iomask=0b00, log(FAIL);  #   0       0    
     cycle=high, r0+=1, iomask=0b01, log(FAIL);  #   1       0  <- A fail is logged    
     cycle=high, r0+=1, iomask=0b10, log(FAIL);  #   0       0    
-    cycle=high, r0+=1, iomask=0b11, log(FAIL);  #   1       0  <- A fail is logged   
+    cycle=high, r0+=1, iomask=0b11, log(FAIL);  #   1       0  <- A fail is logged

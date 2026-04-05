@@ -1,6 +1,3 @@
----
-name: Measure DAC1 Current
----
 # Get DAC1 current in mA
 DAC1_curr=hw.getDAC1MI()
 print("DAC1 current=%.03fmA"%DAC1_curr)

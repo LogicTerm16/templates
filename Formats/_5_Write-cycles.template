@@ -1,6 +1,3 @@
----
-name: Write cycles
----
 oLLLL  # Output cycle where the DIO is held Low (0)
 oZZZH  # Output cycle where the DIO is HiZ (tri-stated) for three cycles and then driven High (1)
 oDDVV  # Output cycle where the DIO is driven for two ticks to Data (either 0 or 1 depending on what bit is mapped in 

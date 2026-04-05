@@ -1,6 +1,3 @@
----
-name: Data Group
----
 cycle=zero, service(hw.setGroupName("Using High VDD"));
 # Some data logging here for the Using High VDD
 
@@ -8,4 +5,3 @@ cycle=zero, service(hw.setGroupName("Using Low VDD"));
 # Some data logging here for the Using Low VDD
 
 # Data will be logged into the database under the testname and group name
-    

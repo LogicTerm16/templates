@@ -1,6 +1,3 @@
----
-name: Clear Flags
----
 Pattern(myPat){                                        #             FCNTR
                                                        #  T0   T1   [0] [1]  PF
     cycle=idle, T0=10;                                 #  10    0    0   0   0

@@ -1,6 +1,3 @@
----
-name: Hello World Full Example - Pattern
----
 # Define Formats
 Formats(helloWorldFormats){
       # CYCLE     0      1    

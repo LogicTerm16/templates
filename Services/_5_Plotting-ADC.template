@@ -1,6 +1,3 @@
----
-name: Plotting ADC
----
 Pattern(plotADC){
     @param NUM_SAMPLES=1000;
     cycle=zero, for (NUM_SAMPLES);
@@ -16,5 +13,3 @@ Pattern(plotADC){
 
     cycle=zero, x=r0, y=r0, z=r0, r0=0xdead, service(pattern_stop(hw));
 }
-
-

@@ -1,6 +1,3 @@
----
-name: Programmable Power Supply Configuration and Measurement
----
  # Configure/Get/Set PPS 
 #hw.configPPS(<opmode>,  <cur_range>, <volt_range>)
 hw.configPPS(opmode="FVMI",       # Operation Mode: 
@@ -36,5 +33,4 @@ print("PPS_M%s=%.3f "%(unit, meas))
 
 ###  Expected Output
 #PPS_MV=2.498 
-#PPS_MI=-0.009 
-
+#PPS_MI=-0.009

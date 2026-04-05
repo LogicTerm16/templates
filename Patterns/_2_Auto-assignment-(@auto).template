@@ -1,6 +1,3 @@
----
-name: Auto-assignment (@auto)
----
 Pattern (auto_test){
 # To be used with DefaultFormats and DefaultSignals
     @auto cycle=zero, x=r0, y=r1, z=r2;            # <-- x, y, and z assignments are applied to all following instructions

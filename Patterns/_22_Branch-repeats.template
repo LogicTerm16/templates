@@ -1,6 +1,3 @@
----
-name: Branch: repeats
----
 Pattern(repeatTest){
     # to be used with GeneralFormats GeneralSignals
     @auto cycle=zero, x=r0, y=r1, z=r2;

@@ -1,6 +1,3 @@
----
-name: Set/Get User Memory
----
 # 1024-Word User Memory. Each word is 16 bit. 
 # Memory is accessable from both services/batches and pattern generator
 hw.setUSERMEM(0, 0x0123)
@@ -16,4 +13,3 @@ USERMEM[0]=0123
 USERMEM[1]=4567
 USERMEM[2]=89ab
 USERMEM[3]=cdef
-

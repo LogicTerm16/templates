@@ -1,6 +1,3 @@
----
-name: ADC0 and ADC1
----
 # Reading ADC0
 # ADC0 is a fully differntial Input with +/-10V 
 val=hw.getADC0()
