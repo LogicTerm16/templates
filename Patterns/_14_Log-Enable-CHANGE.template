@@ -17,3 +17,4 @@ Pattern(myPat){
     cycle=chng, r0+=1, iomask=0b01, log(CHANGE);  #   1     0  <- A fail is logged    
     cycle=chng, r0+=1, iomask=0b10, log(CHANGE);  #   0     0    
     cycle=chng, r0+=1, iomask=0b11, log(CHANGE);  #   1     0  <- A fail is logged
+
